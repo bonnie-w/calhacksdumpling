@@ -35,20 +35,20 @@ export const InputForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(value);
-  
-    const response = await fetch('/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ value }), // Send the 'value' to the server
+  }
+
+  const apiUrl = 'http://localhost:5000/api';
+
+  const passToAPI = () => {
+    fetch(apiUrl + `?js_variable=${value.join(',')}`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.result); // Output received from the Python server
+    })
+    .catch(error => {
+        console.error('Error:', error);
     });
-  
-    if (response.ok) {
-      const aiResults = await response.json();
-      console.log(aiResults); // Handle AI results here
-    }
-  };
+  }
 
   ////////////////////
 
@@ -62,7 +62,7 @@ export const InputForm = () => {
             placeholder="What is in your fridge?"
             onChange={handleInputChange}
           />
-          <button type="submit" className="submit-btn">
+          <button type="submit" className="submit-btn" onClick={passToAPI}>
             Generate Recipe
           </button>
         </form>
