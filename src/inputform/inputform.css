@@ -1,0 +1,40 @@
+.InputWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.InputForm {
+    position: sticky;
+    text-align: center;
+    background-color: rgb(250, 236, 197);
+    padding: 20px;
+}
+
+.input-input {
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+}
+
+.submit-btn {
+    padding: 10px 20px; 
+    background-color: lightblue;
+    color: #fbf9f9; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+body {
+    background-image: url('https://media.istockphoto.com/id/1388420386/vector/seamless-pattern-with-hand-drawn-tomatos.jpg?s=612x612&w=0&k=20&c=JErJ9Pzr2Y1w76yajydAP-ZAm_9mAkVjnRImErfjeUc='); /* Replace 'background.jpg' with your image file path */
+    background-size: cover; /* This makes the image cover the entire viewport */
+    background-position: center; /* Center the image both horizontally and vertically */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    position: sticky;
+}

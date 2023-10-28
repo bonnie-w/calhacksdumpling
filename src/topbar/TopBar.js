@@ -4,7 +4,7 @@ export default function TopBar() {
     return (
         <div className='top'>
             <div className='topL'>
-                <img src='/assets/dumpling-logo.png' alt='' className='logo'/>
+                <img src='./assets/dumpling-logo.png' alt='' className='logo'/>
             </div>
             <div className='topC'>
                 <ul className='topList'> 
