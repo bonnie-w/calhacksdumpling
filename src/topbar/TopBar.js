@@ -1,10 +1,11 @@
 import './topbar.css'
+import logo from '../dumpling-logo.png';
 
 export default function TopBar() {
     return (
         <div className='top'>
             <div className='topL'>
-                <img src='./assets/dumpling-logo.png' alt='' className='logo'/>
+                <a href='index.html'><img src={logo} alt='' className='logo'></img></a>
             </div>
             <div className='topC'>
                 <ul className='topList'> 

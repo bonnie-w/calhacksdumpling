@@ -1,38 +1,69 @@
 .InputWrapper {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
 }
 
 .InputForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: sticky;
     text-align: center;
+    width: 500px;
+    height: 200px;
     background-color: rgb(250, 236, 197);
+    border-radius: 8px;
     padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .input-input {
-    margin-right: 10px;
-    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 300px;
+    border-radius: 12px;
+    width: 400px;
+    height:60px;
+    margin: 20px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+textarea:focus, .input-input:focus{
+    outline: none !important;
+    border:1.5px solid rgb(144, 142, 142);
 }
 
 .submit-btn {
     padding: 10px 20px; 
-    background-color: lightblue;
+    background-color: rgb(23, 120, 152);
     color: #fbf9f9; 
     border: none;
-    border-radius: 5px; 
+    border-radius: 12px; 
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 400px;
+    height: 70px;
+    padding: 10px;
+    margin: 10px;
+    opacity: 75%;
+    font-size: 25px;
+}
+
+.submit-btn:hover {
+    transition: opacity 0.5s; 
+    opacity: 85%;
+}
+
+.submit-btn:active {
+    transition: opacity 1ms;
+    opacity: 100%;
 }
 
 body {
-    background-image: url('https://media.istockphoto.com/id/1388420386/vector/seamless-pattern-with-hand-drawn-tomatos.jpg?s=612x612&w=0&k=20&c=JErJ9Pzr2Y1w76yajydAP-ZAm_9mAkVjnRImErfjeUc='); /* Replace 'background.jpg' with your image file path */
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210729/pngtree-abstract-circular-gray-white-gradient-background-image_754036.jpg'); /* Replace 'background.jpg' with your image file path */
     background-size: cover; /* This makes the image cover the entire viewport */
     background-position: center; /* Center the image both horizontally and vertically */
     background-repeat: no-repeat; /* Prevent the image from repeating */

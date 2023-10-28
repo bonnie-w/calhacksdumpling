@@ -47,7 +47,7 @@ export const InputForm = () => {
             onChange={handleInputChange}
           />
           <button type="submit" className="submit-btn">
-            Submit!
+            Generate Recipe
           </button>
         </form>
       </div>
