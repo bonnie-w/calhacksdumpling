@@ -24,6 +24,7 @@ import './inputform.css';
 
 export const InputForm = () => {
   const [value, setValue] = useState([]);
+  const [output, setOutput] = useState("");
 
   const handleInputChange = (e) => {
     // Split the input value by a comma and remove leading/trailing spaces
@@ -35,6 +36,7 @@ export const InputForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(value);
+    passToAPI();
   }
 
   const apiUrl = 'http://localhost:5000/api';
@@ -43,7 +45,8 @@ export const InputForm = () => {
     fetch(apiUrl + `?js_variable=${value.join(',')}`)
     .then(response => response.json())
     .then(data => {
-        console.log(data.result); // Output received from the Python server
+        setOutput(data.message);
+        console.log("OUPUT MESSAGE:", data.message); // Output received from the Python server
     })
     .catch(error => {
         console.error('Error:', error);
@@ -53,7 +56,7 @@ export const InputForm = () => {
   ////////////////////
 
   return (
-    <>
+    <div className="page">
       <div className="InputWrapper">
         <form className="InputForm" onSubmit={handleSubmit}>
           <input
@@ -62,11 +65,22 @@ export const InputForm = () => {
             placeholder="What is in your fridge?"
             onChange={handleInputChange}
           />
-          <button type="submit" className="submit-btn" onClick={passToAPI}>
+          <button type="submit" className="submit-btn">
             Generate Recipe
           </button>
         </form>
       </div>
-    </>
+
+      {/* <div className="OutputDiv">
+        {output}
+      </div> */}
+
+      {output && (
+        <div className="OutputWrapper">
+          <div className="OutputDiv" dangerouslySetInnerHTML={{ __html: output.replace(/\n/g, '<br>') }}>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };

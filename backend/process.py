@@ -23,11 +23,11 @@ def get_js_variable():
         repetition_penalty = 0,
         stop = ["\n<human>:", "[INST]"]
     )
-    print(output['output']['choices'][0]["text"])
+    # print(output['output']['choices'][0]["text"])
     
     return jsonify(message=output['output']['choices'][0]['text'])
     #return jsonify(output=output['output']['choices'][0]['text'])
     
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5000)
