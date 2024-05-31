@@ -35,7 +35,10 @@ export const InputForm = () => {
     fetch(apiUrl + `?js_variable=${ingredients.join(',')}`)
     .then(response => response.json())
     .then(data => {
-        setOutput(data.message);
+        const message = data.message;
+        const ingredientsIndex = message.toLowerCase().indexOf('ingredients:');
+        const outputText = ingredientsIndex !== -1 ? message.substring(ingredientsIndex) : message;
+        setOutput(outputText);
         console.log("OUPUT MESSAGE:", data.message);
     })
     .catch(error => {

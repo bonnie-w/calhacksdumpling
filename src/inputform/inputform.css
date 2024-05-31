@@ -3,11 +3,10 @@
 }
 
 .InputWrapper {
-    /* height: 200px; Adjusted to give space for output */
     display: flex;
     justify-content: center;
     margin-top: 150px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     align-items: center;
     padding: auto;
 }
@@ -110,7 +109,6 @@ textarea:focus, .input-input:focus {
 
 .OutputWrapper {
     display: flex;
-    width: 100%;
     margin-top: 20px;
     justify-content: center;
 }
@@ -121,6 +119,7 @@ textarea:focus, .input-input:focus {
     border-radius: 16px;
     color: white;
     font-family: 'Child Chat', sans-serif;
+    width: 900px;
 }
 
 .bodyText {
