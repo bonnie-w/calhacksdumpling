@@ -3,12 +3,13 @@
 }
 
 .InputWrapper {
-    height: 200px; /* Adjusted to give space for output */
+    /* height: 200px; Adjusted to give space for output */
     display: flex;
     justify-content: center;
     margin-top: 150px;
     margin-bottom: 100px;
     align-items: center;
+    padding: auto;
 }
 
 .InputForm {
@@ -18,21 +19,49 @@
     align-items: center;
     text-align: center;
     width: 500px;
-    height: 200px;
-    background-color: rgb(250, 236, 197);
+    height: auto;
+    background-color: #F55951;
     border-radius: 8px;
-    padding: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 30px 30px;
+    box-shadow: rgba(82, 82, 82, 0.35) 0px 5px 15px;
 }
 
-.input-input {
+input {
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    width: 250px;
+    height: 30px;
+    margin: 20px;
+    font-size: 18px;
+    padding: 10px;
+    padding-left: 20px;
+    font-family: 'Child Chat', sans-serif;
+}
+
+input::placeholder {
+    color: #cdcdcd; 
+    font-size: 15px;
+    font-family: 'Child Chat', sans-serif;
+    font-style: italic;
+}
+
+.temp-input {
     border: 1px solid #ccc;
     border-radius: 12px;
     width: 400px;
     height: 60px;
     margin: 20px;
-    font-size: 20px;
+    font-size: 18px;
     padding: 10px;
+    padding-left: 20px;
+    font-family: 'Child Chat', sans-serif;
+}
+
+.temp-input::placeholder {
+    color: #cdcdcd; 
+    font-size: 15px;
+    font-family: 'Child Chat', sans-serif;
+    font-style: italic;
 }
 
 textarea:focus, .input-input:focus {
@@ -42,23 +71,22 @@ textarea:focus, .input-input:focus {
 
 .submit-btn {
     padding: 10px 20px;
-    background-color: rgb(23, 120, 152);
-    color: #fbf9f9;
+    background-color: #f2f2f2;
+    color: #F55951;
     border: none;
     border-radius: 12px;
     cursor: pointer;
     transition: background-color 0.3s;
-    width: 400px;
-    height: 70px;
-    padding: 10px;
-    margin: 10px;
-    opacity: 75%;
-    font-size: 25px;
+    width: 460px;
+    height: 60px;
+    font-size: 20px;
+    font-family: 'Child Chat', sans-serif;
 }
 
 .submit-btn:hover {
     transition: opacity 0.5s;
-    opacity: 85%;
+    background-color: #D3D3D3; /* Light Gray */
+    color: #f6443a;
 }
 
 .submit-btn:active {
@@ -66,27 +94,107 @@ textarea:focus, .input-input:focus {
     opacity: 100%;
 }
 
-body {
-    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210729/pngtree-abstract-circular-gray-white-gradient-background-image_754036.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.inline-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.inline-form .add-btn {
+    width: auto;
+    height: 50px;
+    padding: 10px 20px;
+    margin: 0;
 }
 
 .OutputWrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     margin-top: 20px;
+    justify-content: center;
 }
 
-.OutputDiv {
-    width: 800px;
-    background-color: rgb(250, 236, 197);
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    text-align: left;
-    font-size: 18px;
+.outputText {
+    background-color: #F55951;
+    padding: 30px;
+    border-radius: 16px;
+    color: white;
+    font-family: 'Child Chat', sans-serif;
+}
+
+.bodyText {
+    font-family: 'Child Chat', sans-serif;
+    color: white;
+    margin: 20px;
+    font-size: 20px;
+}
+
+.add-btn {
+    background-color: #f2f2f2;
+    color: #F55951;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    font-family: 'Child Chat', sans-serif;
+}
+
+.add-btn:hover {
+    transition: opacity 0.5s;
+    background-color: #D3D3D3; /* Light Gray */
+    color: #f6443a;
+}
+
+.add-btn:active {
+    transition: opacity 1ms;
+    opacity: 100%;
+}
+
+.rowHeight {
+    padding: 5px 0px;
+}
+
+.ingredient-list {
+    margin-bottom: 10px;
+    /* text-align: start; */
+    width: 350px;
+}
+  
+.ingredient {
+    margin: 10px 0px;
+}
+
+.ingredientRow {
+    font-family: 'Child Chat', sans-serif;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+}
+
+.delete {
+    background-color: #f2f2f2;
+    color: #F55951;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: auto;
+    height: auto;
+    margin-left: 30px;
+    padding: 8px 15px;
+}
+
+.delete:hover {
+    transition: opacity 0.5s;
+    background-color: #D3D3D3; /* Light Gray */
+    color: #f6443a;
+}
+
+.delete:active {
+    transition: opacity 1ms;
+    opacity: 100%;
 }

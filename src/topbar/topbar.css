@@ -6,19 +6,17 @@ body {
 .top{
     width: 100%;
     height: 70px;
-    background-color: rgb(250, 236, 197);
+    background-color: #F55951;
     position: fixed;
     top: 0;
     display: flex;
     align-items: center;
     font-family: 'Playfair Display', serif;
-    border-bottom: 2px solid rgb(181, 181, 183);
 }
 
 .TopIcon, .TopSearch {
     font-size: 20px;
     margin-right: 10px;
-    color: #444;
     cursor: pointer;
 }
 
@@ -54,10 +52,10 @@ body {
 }
 
 .ListItem {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Child Chat', sans-serif;
     margin-right: 20px;
     font-size: 40px;
     font-weight: 300;
     cursor: pointer;
-    color:#444;
+    color:#ffff;
 }

@@ -9,7 +9,7 @@ export default function TopBar() {
             </div>
             <div className='topC'>
                 <ul className='topList'> 
-                    <li className='ListItem'> UGLY DUMPLINGS </li>
+                    <li className='ListItem'> Ugly Dumplings </li>
                 </ul>
             </div>
             <div className='topR'> 
