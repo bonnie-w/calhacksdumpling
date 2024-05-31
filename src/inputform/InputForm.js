@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './inputform.css';
 
 export const InputForm = () => {
-  const [value, setValue] = useState([]);
   const [output, setOutput] = useState("");
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
-
-  const handleInputChange = (e) => {
-    const newValue = e.target.value.split(',').map(item => item.trim());
-    setValue(newValue);
-  };
 
   const handleIngredientChange = (e) => {
     setNewIngredient(e.target.value);
@@ -38,7 +32,7 @@ export const InputForm = () => {
   const apiUrl = 'http://localhost:5000/api';
 
   const passToAPI = () => {
-    fetch(apiUrl + `?js_variable=${value.join(',')}`)
+    fetch(apiUrl + `?js_variable=${ingredients.join(',')}`)
     .then(response => response.json())
     .then(data => {
         setOutput(data.message);
@@ -51,24 +45,6 @@ export const InputForm = () => {
 
   return (
     <div className="page">
-      {/* <div className="InputWrapper">
-        <form className="InputForm" onSubmit={handleSubmit}>
-          <div className="bodyText">
-            Don't know what to eat today? <br/>
-            Enter ingredients from your fridge!
-          </div>
-          <input
-            className= "temp-input"
-            type="text"
-            placeholder="What is in your fridge?"
-            onChange={handleInputChange}
-          />
-          <button type="submit" className="submit-btn">
-            Generate Recipe
-          </button>
-        </form>
-      </div> */}
-
       <div className="InputWrapper">
         <div className="InputForm">
           <div className="bodyText">
@@ -90,7 +66,7 @@ export const InputForm = () => {
           <div className="ingredient-list">
             {ingredients.map((ingredient, index) => (
               <div key={index} className="ingredientRow">
-                <text className="ingredient"> {ingredient} </text>
+                <p className="ingredient"> {ingredient} </p>
                 <button type="button" className="delete" onClick={() => handleDelete(ingredient)}>
                   <i class="fa-solid fa-trash-can"/>
                 </button>
@@ -106,7 +82,7 @@ export const InputForm = () => {
 
       {output && (
         <div className="OutputWrapper">
-          <text className="outputText" dangerouslySetInnerHTML={{ __html: output.replace(/\n/g, '<br>') }}/>
+          <p className="outputText" dangerouslySetInnerHTML={{ __html: output.replace(/\n/g, '<br>') }}/>
         </div>
       )}
     </div>
